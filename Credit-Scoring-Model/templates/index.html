@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Credit Scoring Model</title>
+</head>
+
+<body>
+    <h2>Credit Scoring Prediction</h2>
+
+    <form action="/predict" method="post">
+        Income: <input type="number" name="income" required><br><br>
+        Debt: <input type="number" name="debt" required><br><br>
+
+        Payment History:
+        <select name="payment_history">
+            <option value="1">Good</option>
+            <option value="0">Bad</option>
+        </select><br><br>
+
+        Credit Utilization:
+        <input type="number" step="0.01" name="credit_utilization" required><br><br>
+
+        Credit Years:
+        <input type="number" name="credit_years" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+
+</body>
+
+</html>
